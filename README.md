@@ -16,6 +16,12 @@ PHSE is a utility class for managing sessions in PHP applications. It provides m
 * GetExpiredDetails: Get details of expired session variables.
 
 # Usage
+### Start Session
+For start new session:
+```
+PHSE::start();
+```
+
 ### Adding a Session Variable
 To add a new session variable:
 ```
