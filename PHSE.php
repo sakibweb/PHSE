@@ -5,24 +5,24 @@
  * A utility class for managing sessions in PHP applications.
  * Provides methods for adding, updating, removing, and accessing session variables.
  */
+ 
 class PHSE {
     private static $instance;
 
     private function __construct() {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
     }
 
-    /**
-     * Get an instance of PHSE.
-     *
-     * @return PHSE The PHSE instance.
-     */
-    public static function getInstance() {
-        if (!isset(self::$instance)) {
-            self::$instance = new self();
+	/**
+	 * Starts a PHP session if not already started.
+	 */
+	public static function start() {
+		if (session_status() === PHP_SESSION_NONE) {
+            session_start();
         }
-        return self::$instance;
-    }
+	}
 
     /**
      * Add a session variable.
