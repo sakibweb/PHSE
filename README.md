@@ -1,2 +1,2 @@
 # PHSE
-PHSE is PHP Session Management Library
+PHSE is Session Management Library
